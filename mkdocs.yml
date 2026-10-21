@@ -1,0 +1,40 @@
+site_name: Proof Notes POC
+site_description: A minimal proof documentation prototype with local reference cards.
+site_url: ""
+
+theme:
+  name: material
+  language: en
+  features:
+    - navigation.sections
+    - navigation.expand
+    - navigation.instant
+    - navigation.tracking
+    - search.highlight
+    - toc.integrate
+  font: false
+
+nav:
+  - Home: index.md
+  - Chapter 1 — Even Numbers: chapters/01-even-numbers.md
+
+markdown_extensions:
+  - attr_list
+  - md_in_html
+  - footnotes
+  - toc:
+      permalink: true
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.superfences
+  - pymdownx.details
+  - admonition
+
+extra_css:
+  - stylesheets/proof-notes.css
+  - https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.css
+
+extra_javascript:
+  - https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.js
+  - https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/contrib/auto-render.min.js
+  - javascripts/proof-notes.js
