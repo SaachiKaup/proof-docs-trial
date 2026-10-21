@@ -1,2 +1,4 @@
 mkdocs>=1.6,<2
 mkdocs-material>=9.6,<10
+beautifulsoup4>=4.13,<5
+markdown-katex>=202406.1035

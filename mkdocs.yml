@@ -24,17 +24,17 @@ markdown_extensions:
   - footnotes
   - toc:
       permalink: true
-  - pymdownx.arithmatex:
-      generic: true
+  - markdown_katex:
+      insert_fonts_css: true
   - pymdownx.superfences
   - pymdownx.details
   - admonition
 
 extra_css:
   - stylesheets/proof-notes.css
-  - https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.css
 
 extra_javascript:
-  - https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.js
-  - https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/contrib/auto-render.min.js
-  - javascripts/proof-notes.js
+  - javascripts/reference-panel.js
+
+hooks:
+  - plugins/proof_references.py

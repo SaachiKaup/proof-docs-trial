@@ -56,9 +56,7 @@
 }
 
 #proof-reference-cards {
-  align-self: flex-start;
-  flex: 0 0 25rem;
-  margin-left: 2rem;
+  align-self: start;
   padding: 0 1.5rem 1rem 0;
   position: sticky;
   top: 4rem;
@@ -69,29 +67,40 @@
   overflow-y: auto;
 }
 
+#proof-reference-cards > [hidden] { display: none !important; }
+
 .reference-card {
   background: #fffdf5;
   border: 1px solid var(--proof-rule);
   border-left: 3px solid var(--proof-accent);
   box-shadow: 0 0.45rem 1.5rem rgb(34 27 17 / 14%);
   padding: 0.9rem 1rem 1rem;
+  position: relative;
 }
 
-.reference-card__header { align-items: center; color: var(--proof-muted); display: flex; font: 600 0.72rem/1.2 system-ui, sans-serif; justify-content: space-between; letter-spacing: 0.08em; text-transform: uppercase; }
+.reference-card__header { position: absolute; right: 0.55rem; top: 0.5rem; }
 .reference-card__close { background: transparent; border: 0; color: var(--proof-ink); cursor: pointer; font-size: 1.5rem; line-height: 1; }
 .reference-card__content { font-family: Georgia, "Times New Roman", serif; font-size: 0.9rem; line-height: 1.5; }
-.reference-card__content h2, .reference-card__content h3 { font-size: 1.1rem; line-height: 1.25; margin: 0.9rem 0 0.55rem; }
+.reference-card__content h2, .reference-card__content h3 { font-size: 1.1rem; line-height: 1.25; margin: 0 1.8rem 0.55rem 0; }
 .reference-card__content .headerlink { display: none; }
 .reference-card__content .katex-display { font-size: 0.86em; }
 .reference-card__source { color: var(--proof-muted); display: inline-block; font: 0.78rem system-ui, sans-serif; margin-top: 0.65rem; }
 
 @media (min-width: 1220px) {
   .md-main__inner.md-grid { max-width: 88rem; }
-  .md-content { min-width: 0; }
+  .md-content {
+    align-items: start;
+    column-gap: 2rem;
+    display: grid;
+    grid-template-columns: minmax(0, 47rem) minmax(21rem, 25rem);
+    min-width: 0;
+  }
+  .md-content__inner { grid-column: 1; max-width: 47rem; min-width: 0; }
+  #proof-reference-cards { grid-column: 2; grid-row: 1; min-width: 0; }
 }
 
 @media (max-width: 1219px) {
-  #proof-reference-cards { bottom: 0; left: 0; margin-left: 0; max-height: 58vh; padding: 0.75rem; position: fixed; right: 0; top: auto; width: auto; }
+  #proof-reference-cards { bottom: 0; left: 0; max-height: 58vh; padding: 0.75rem; position: fixed; right: 0; top: auto; width: auto; }
   .reference-card { box-shadow: 0 -0.35rem 1.5rem rgb(34 27 17 / 18%); }
 }
 

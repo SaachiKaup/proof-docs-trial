@@ -1,0 +1,28 @@
+{
+  "name": "proof-docs",
+  "version": "1.0.0",
+  "description": "A small MkDocs Material prototype for mathematical proofs with Tufte-inspired reference cards. Python builds proof-reference markup and static math; browser JavaScript only controls the reference-card UI.",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs",
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SaachiKaup/proof-docs-trial.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/SaachiKaup/proof-docs-trial/issues"
+  },
+  "homepage": "https://github.com/SaachiKaup/proof-docs-trial#readme",
+  "devDependencies": {
+    "katex": "^0.19.0"
+  }
+}

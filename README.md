@@ -1,6 +1,6 @@
 # Proof Notes POC
 
-A small MkDocs Material prototype for mathematical proofs with Tufte-inspired reference cards.
+A small MkDocs Material prototype for mathematical proofs with Tufte-inspired reference cards. Python builds proof-reference markup and static math; browser JavaScript only controls the reference-card UI.
 
 ## Run locally
 
@@ -16,8 +16,21 @@ Open the chapter, then click the buttons for Definition 1.1 and Lemma 1.2 in The
 
 ```sh
 python3 -m unittest discover -s tests -v
-node --check docs/javascripts/proof-notes.js
+node --check docs/javascripts/reference-panel.js
 .venv/bin/mkdocs build --strict
 ```
 
-Previewable material is fenced in Markdown using a `<section class="reference-source" ... markdown="1">` wrapper, and references are explicit `<button class="reference-trigger" data-reference="...">` controls. This POC handles references within the active chapter. A later production version can add a build-time reference index for cross-chapter previews.
+## Authoring references
+
+Wrap a previewable section in a Python-validated directive, then use its ID in an inline reference:
+
+```md
+::: proof-ref id="lemma-even-square"
+## Lemma 1.2
+...
+:::
+
+By [[Lemma 1.2|lemma-even-square]], the claim follows.
+```
+
+Authors write no HTML. The MkDocs hook generates the source section, reference buttons, and complete hidden cards during the build. This POC handles references within the active chapter; a later production version can add a build-time index for cross-chapter previews.
